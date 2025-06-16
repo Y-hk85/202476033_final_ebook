@@ -1,0 +1,915 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f6faff;
+    margin: 0;
+    padding: 1em;
+}
+  .unit-meta {
+    text-align: right;
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+  }
+.unit-header {
+    background: #0d65c9;
+    color: white;
+    padding: 1em;
+    border-radius: 8px 8px 0 0;
+	 margin-top: 20px;
+}
+
+.unit-subtitle {
+    margin: 0;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.learning-goal, .activity-section, .quiz-section, .multiple-choice {
+    background: white;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #ddd;
+}
+
+.drag-drop-area {
+    display: flex;
+    gap: 2em;
+}
+
+.items-to-drag {
+    flex: 1;
+}
+
+.drag-item {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background: #e0f0ff;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+
+.drop-targets {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex: 1;
+}
+
+.drop-box {
+    background: #f2f2f2;
+    padding: 1em;
+    border: 2px dashed #aaa;
+    flex-grow: 1;
+}
+
+.quiz-card {
+    margin-top: 1em;
+}
+
+.quiz-card button {
+    margin-right: 1em;
+}
+
+.feedback {
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.citation-feedback {
+    margin-top: 1em;
+    color: #2c7a2c;
+    font-weight: bold;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.next-btn {
+    background: #007acc;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.drag-order-section {
+    background: #eaf6ff;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #dde;
+}
+
+.drag-explain {
+    background: #fffbe7;
+    border: 2px dashed #ffd600;
+    border-radius: 7px;
+    padding: 0.7em 1em;
+    margin: 0.7em 0 0.5em 0;
+    font-size: 0.98em;
+    color: #444;
+}
+
+.drag-explain-title {
+    font-weight: bold;
+    color: #ff9800;
+    margin-right: 0.5em;
+}
+
+.drag-explain-desc {
+    display: block;
+    margin-top: 0.2em;
+}
+
+.drag-btn {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.6em 1.3em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.drag-btn:hover { background: #f57c00; }
+
+.drag-popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.35);
+    justify-content: center;
+    align-items: center;
+}
+
+.drag-popup.active { display: flex; }
+
+.drag-popup-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2em 1.5em 1.5em 1.5em;
+    min-width: 320px;
+    max-width: 95vw;
+    box-shadow: 0 4px 16px #0003;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drag-popup-content .close {
+    position: absolute; right: 18px; top: 12px; font-size: 1.5em; cursor: pointer; color: #888;
+}
+
+.drag-popup-desc {
+    background: #e3f2fd;
+    border-radius: 6px;
+    padding: 0.6em 1em;
+    margin-bottom: 1em;
+    color: #1976d2;
+    font-size: 1em;
+    text-align: center;
+}
+
+.drag-list {
+    display: flex;
+    gap: 0.7em;
+    margin: 1em 0;
+    flex-wrap: wrap;
+}
+
+.drag-item {
+    background: #e3f2fd;
+    border: 1.5px dashed #1976d2;
+    border-radius: 7px;
+    padding: 0.5em 1.2em;
+    font-size: 1em;
+    cursor: grab;
+    user-select: none;
+    margin-bottom: 0.5em;
+}
+
+.drag-feedback { margin-top: 0.7em; font-weight: bold; min-height: 1.2em; }
+
+.subjective-section {
+    background: #f7faff;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #dde;
+}
+
+.subjective-section textarea {
+    width: 100%; min-height: 3em; border-radius: 6px; border: 1.5px solid #90caf9; padding: 0.7em; font-size: 1em; margin-top: 0.5em;
+}
+
+.subjective-section button {
+    background: #1976d2; color: #fff; border: none; border-radius: 5px; padding: 0.5em 1.2em; font-size: 1em; cursor: pointer; margin-top: 0.5em;
+}
+
+.subjective-section button:hover { background: #004999; }
+
+.subjective-feedback { margin-top: 0.5em; color: #388e3c; font-weight: bold; }
+
+.self-eval-section {
+    background: #f7fff0;
+    padding: 1.5em;
+    margin-top: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.self-eval-section h3 { color: #33691e; }
+
+.eval-item {
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.eval-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.eval-item span { display: block; margin-bottom: 0.6em; font-weight: bold; color: #555; }
+
+/* 자기 평가 서술형 항목 레이아웃 개선 */
+.eval-item:has(textarea) {
+    display: flex; /* flexbox 컨테이너로 설정 */
+    flex-wrap: wrap; /* 요소들이 넘치면 줄바꿈 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.self-eval-section textarea {
+     width: 100%; /* 부모 flex item의 100% 너비 사용 */
+     box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+    min-height: 6em;
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    padding: 0.7em;
+    font-size: 1em;
+    margin-top: 0.5em;
+    resize: vertical;
+}
+
+.self-eval-section .star-rating {
+  margin: 0.5em 0;
+  font-size: 1.8em;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.self-eval-section .star-rating .star {
+    cursor: pointer;
+}
+
+/* 호버 효과 완전 제거 */
+.self-eval-section .star-rating .star:hover,
+.self-eval-section .star-rating .star:hover ~ .star {
+    color: #ccc;
+}
+
+/* 선택된 별만 색상 변경 */
+.self-eval-section .star-rating .star.selected {
+    color: #ffb300;
+}
+
+/* 카드 디자인 개선 */
+.card {
+    background: white;
+    padding: 1.5em;
+    margin-top: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* 용어사전 스타일 */
+.glossary-btn {
+    position: fixed;
+    right: 20px;
+    top: 70px;
+    background: #FF9800; /* 눈에 띄는 주황색 */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1em 1.8em; /* 패딩 증가 */
+    font-size: 1.1em; /* 폰트 크기 증가 */
+    font-weight: bold; /* 글자를 더 두껍게 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 글자 테두리 효과 */
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 그림자 강화 */
+    z-index: 1000;
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* 전환 효과 추가 */
+}
+
+.glossary-btn:hover {
+    background: #F57C00; /* 호버 시 더 진한 주황색 */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4); /* 호버 시 그림자 더 강화 */
+}
+
+.glossary-popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.glossary-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2em;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.glossary-content .close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #888;
+}
+
+.glossary-item {
+    margin: 1em 0;
+    padding: 1em;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.glossary-item h4 {
+    color: #1976d2;
+    margin: 0 0 0.5em 0;
+}
+
+/* 비디오 컨테이너 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 1em 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* 빈칸 채우기 퀴즈 */
+.fill-blank .blank-input {
+    border: 2px dashed #1976d2;
+    border-radius: 4px;
+    padding: 0.3em;
+    width: 100px;
+    text-align: center;
+}
+
+/* 이미지 퀴즈 */
+.image-quiz .image-options {
+    display: flex;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.image-quiz img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.image-quiz img:hover {
+    transform: scale(1.05);
+}
+
+/* 오디오 섹션 */
+.audio-section {
+    background: #e3f2fd;
+}
+
+.audio-section audio {
+    width: 100%;
+    margin: 1em 0;
+}
+
+/* 반응형 디자인 개선 */
+@media (max-width: 768px) {
+    .card {
+        padding: 1em;
+    }
+    
+    .image-quiz .image-options {
+        flex-direction: column;
+    }
+    
+    .image-quiz img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .glossary-content {
+        width: 95%;
+        padding: 1em;
+    }
+}
+
+/* 팝업 오버레이 스타일 */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.popup.active {
+    display: flex;
+}
+
+.popup-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2em 1.5em;
+    min-width: 320px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: left;
+}
+
+.popup-content .close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #555;
+}
+
+/* 팝업 버튼 스타일 */
+.popup-btn {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0.5em 0.5em 0.5em 0;
+    transition: background 0.3s ease;
+}
+.popup-btn:hover { background: #1565c0; }
+
+/* 평가 팝업 내 문제 유형별 섹션 스타일 */
+.quiz-section-popup, .multiple-choice-popup, .fill-blank-popup, .subjective-popup, .drag-order-popup, .self-eval-popup {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.2em;
+    margin-bottom: 1.5em;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* 평가 팝업 내 퀴즈 카드 스타일 */
+.popup-content .quiz-card {
+     background: #ffffff;
+     padding: 1em;
+     margin-top: 1em;
+     border-radius: 8px;
+     border: 1px solid #ddd;
+     box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.popup-content .quiz-card h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* 피드백 메시지 스타일 */
+.popup-content .feedback {
+    margin-top: 0.8em;
+    padding: 0.6em 1em;
+    border-radius: 5px;
+    font-weight: bold;
+    min-height: 1.2em;
+}
+
+.popup-content .feedback::before {
+    content: '\200B';
+}
+
+.popup-content .feedback:not(:empty) {
+     border: 1px solid;
+}
+
+.popup-content .feedback[style*="green"] {
+    color: #1b5e20;
+    background: #e8f5e9;
+    border-color: #a5d6a7;
+}
+
+.popup-content .feedback[style*="red"] {
+    color: #b71c1c;
+    background: #ffebee;
+    border-color: #ef9a9a;
+}
+
+.popup-content .feedback[style*="orange"] {
+    color: #e65100;
+    background: #fff3e0;
+    border-color: #ffcc80;
+}
+
+/* 해설 스타일 */
+.explain-box {
+    margin-top: 1em;
+    padding: 0.8em 1em;
+    background: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-left: 4px solid #2196f3;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #1a237e;
+}
+
+.explain-box strong { color: #1565c0; }
+
+/* hidden 클래스: 요소를 숨김 */
+.hidden {
+    display: none;
+}
+
+/* 힌트 버튼 스타일 */
+.hint-btn {
+    background: #ffeb3b; /* 노란색 계열 */
+    color: #212121; /* 어두운 텍스트 */
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 0.8em;
+    transition: background 0.3s ease;
+}
+
+.hint-btn:hover { background: #fbc02d; /* 호버 시 더 진한 노랑 */}
+
+/* 드래그 순서 맞추기 스타일 (팝업 내) */
+.popup-content .sortable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.8em 0 1.2em 0;
+}
+
+.popup-content .sortable-list li {
+  background: #e8eaf6;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: grab;
+  border: 1px solid #c5cae9;
+  transition: background 0.2s, transform 0.1s;
+  font-size: 1em;
+}
+
+.popup-content .sortable-list li:active { cursor: grabbing; }
+.popup-content .sortable-list li.dragging { opacity: 0.6; transform: scale(1.02); background: #c5cae9; }
+
+/* 별점 자기평가 스타일 (팝업 내) */
+.popup-content .star-rating-popup {
+  margin: 1em 0;
+  font-size: 2em;
+  color: #ccc;
+}
+
+.popup-content .star-rating-popup .star-popup {
+    cursor: pointer;
+}
+
+.popup-content .star-rating-popup .star-popup.selected,
+.popup-content .star-rating-popup .star-popup:hover,
+.popup-content .star-rating-popup .star-popup:hover ~ .star-popup {
+    color: #ffb300;
+}
+
+/* 이미지 스타일 (팝업 내 문제 이미지) */
+.popup-content img[alt$="문제1"],
+.popup-content img[alt="저작권 침해 상황 예시"] {
+    display: block;
+    margin: 0.5em auto 1.5em auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* 빈칸 채우기 input 스타일 */
+.popup-content .blank-input {
+    border: 2px dashed #42a5f5;
+    border-radius: 4px;
+    padding: 0.3em;
+    width: 100px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.popup-content .blank-input:focus { outline: none; border-color: #1976d2; }
+
+/* 주관식 textarea 스타일 */
+.popup-content textarea {
+    width: calc(100% - 1.4em);
+    min-height: 5em;
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    padding: 0.7em;
+    font-size: 1em;
+    margin-top: 0.5em;
+    resize: vertical;
+}
+
+/* 반응형 디자인 개선 (팝업 내) */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 1em;
+    }
+
+    .popup-content .sortable-list li {
+        padding: 10px;
+    }
+
+     .popup-content .star-rating-popup {
+        font-size: 1.8em;
+     }
+
+     .popup-content .blank-input { width: 80px; }
+
+     .popup-content textarea { width: calc(100% - 1.4em); }
+}
+
+/* 힌트 팝업 스타일 */
+.hint-popup {
+    background: rgba(0,0,0,0.3);
+    z-index: 3001;
+}
+
+.hint-popup-content {
+    background: #fff9c4;
+    border-radius: 12px;
+    padding: 1.5em;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.hint-popup-content h4 { margin-top: 0; color: #f57f17; }
+
+#hint-popup-text { font-size: 1em; color: #333; }
+
+.activity-section h3 .explanation-btn {
+    background: #4CAF50; /* 녹색 계열 */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.3s ease;
+}
+
+.activity-section h3 .explanation-btn:hover {
+    background: #388E3C;
+}
+
+/* 활동 설명 팝업 스타일 (기존 팝업 스타일 재활용) */
+#activity1Explanation .popup-content {
+    max-width: 500px; /* 적절한 너비 설정 */
+}
+
+.main-content-layout {
+    display: block;
+    margin-top: 1em;
+}
+
+.main-content-layout > section {
+    flex: 1; /* 남은 공간을 채우도록 설정 */
+    min-width: 300px; /* 최소 너비 설정 */
+}
+
+/* 특정 섹션 너비 조정 (예시) */
+/* .main-content-layout .learning-goal { */
+/*     flex: 1; */
+/* } */
+/* .main-content-layout .activity-section { */
+/*     flex: 2; */
+/* } */
+/* .main-content-layout .self-eval-section { */
+/*     flex-basis: 100%; */
+/* } */
+
+.learning-checklist {
+    /* 기존 .card 스타일 상속 */
+    background: #e8f5e9; /* 연한 녹색 배경 */
+    border-color: #a5d6a7; /* 연한 녹색 테두리 */
+}
+
+.learning-checklist h3 { color: #2e7d32; /* 진한 녹색 제목 */ }
+
+.learning-checklist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.learning-checklist li {
+    margin-bottom: 0.8em;
+    display: flex; /* 체크박스와 레이블 정렬 */
+    align-items: center;
+}
+
+.learning-checklist input[type="checkbox"] {
+    margin-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    flex-shrink: 0; /* 체크박스 크기 유지 */
+}
+
+.learning-checklist label {
+    flex-grow: 1; /* 레이블이 남은 공간 채우도록 */
+    cursor: pointer;
+}
+
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+    .main-content-layout {
+        /* flex-wrap: nowrap; */ /* main-content-layout에서는 줄바꿈 허용 */
+        display: block; /* Flexbox 해제 */
+    }
+
+    /* 활동 컨테이너의 자식 요소들이 가로로 나란히 */
+    .activities-container {
+        flex-wrap: nowrap;
+    }
+}
+
+.citation-practice {
+    margin-top: 1em;
+    padding: 1em;
+    background: #e0f7fa; /* 연한 하늘색 배경 */
+    border-radius: 8px;
+    border: 1px solid #b2ebf2;
+}
+
+.citation-practice h4 {
+    color: #006064; /* 진한 청록색 제목 */
+    margin-top: 0;
+    margin-bottom: 0.8em;
+}
+
+.citation-practice ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.citation-practice li {
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+}
+
+.citation-input-area textarea {
+    width: calc(100% - 1.4em); /* 패딩 고려 */
+    padding: 0.7em;
+    border: 1px solid #b0bec5; /* 연한 회색 테두리 */
+    border-radius: 4px;
+    font-size: 1em;
+    resize: vertical; /* 세로 크기 조절 가능 */
+}
+
+/* 활동 2 제어 버튼 스타일 (활동 1과 동일) */
+.activity2-controls .submit-btn {
+    /* .submit-btn 스타일 상속 */
+    margin: 0 0.5em;
+}
+
+.activities-container {
+    display: flex;
+    flex-wrap: wrap; /* 화면이 좁으면 줄바꿈 */
+    gap: 1.5em; /* 활동 섹션 간 간격 */
+    margin-top: 1em; /* 위쪽 간격 */
+}
+
+.activities-container > .activity-section {
+    flex: 1; /* 남은 공간을 동일하게 나누어 가짐 */
+    min-width: 300px; /* 최소 너비 설정 */
+}
+
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+    .main-content-layout {
+        /* flex-wrap: nowrap; */ /* main-content-layout에서는 줄바꿈 허용 */
+        display: block; /* Flexbox 해제 */
+    }
+
+    /* 활동 컨테이너의 자식 요소들이 가로로 나란히 */
+    .activities-container {
+        flex-wrap: nowrap;
+    }
+}
+
+.self-save-btn {
+    /* .submit-btn 스타일 상속 */
+    margin-top: 0.8em;
+    /* float: right; */ /* float 제거 */
+    margin-left: auto; /* 오른쪽으로 최대한 이동 */
+    flex-shrink: 0; /* 버튼 크기 줄어들지 않도록 */
+}
+
+.page-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+ /*background-color: #fff;*/
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e9ecef;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.home-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
+
+.page-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

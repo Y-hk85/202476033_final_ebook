@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+  <title>올바른 저작권 사용 이해하기</title>
+  <link rel="stylesheet" type="text/css" href="../Styles/style4.css"/>
+  
+</head>
+<body>
+<nav class="page-navigation">
+    <a href="toc.xhtml" class="nav-btn home-btn">🏠 홈</a>
+  </nav>
+<div class="unit-meta">
+      <span class="unit-right-label">1. 디지털 사회와 정보 윤리</span>
+    </div>
+  <div class="unit-header">
+    <p class="unit-subtitle">올바른 저작권 사용 이해하기</p>
+  </div>
+
+  <div class="main-content-layout">
+    <section class="learning-goal card">
+      <h3>📚 점검하고 평가하기 (형성평가)</h3>
+      <ul>
+        <li>저작권 침해 사례를 구분할 수 있다.</li>
+        <li>다양한 저작물에 대한 올바른 출처 표시 방법을 알고 있다.</li>
+        <li>저작권 관련 지식을 다양한 문제로 점검하고 스스로 평가할 수 있다.</li>
+        <li>자기평가를 통해 이해한 정도를 파악할 수 있다.</li>
+      </ul>
+    </section>
+
+    <!-- 학습 내용 체크리스트 섹션 추가 -->
+    <section class="learning-checklist card">
+      <h3>✅ 학습 내용 점검</h3>
+      <p>평가 문제를 풀기 전에 오늘 배운 내용을 잘 이해했는지 스스로 점검해 보세요.</p>
+      <ul>
+        <li><input type="checkbox" id="chk1"/><label for="chk1"> 저작권 침해 사례를 구분할 수 있다.</label></li>
+        <li><input type="checkbox" id="chk2"/><label for="chk2"> 출처 표시 기준을 적용할 수 있다.</label></li>
+        <li><input type="checkbox" id="chk3"/><label for="chk3"> 퀴즈를 통해 스스로 점검할 준비가 되었다.</label></li>
+        <!-- 필요에 따라 항목 추가 -->
+      </ul>
+    </section>
+
+    <!-- 활동 섹션들을 묶는 컨테이너 시작 -->
+    <div class="activities-container">
+
+      <section class="activity-section card">
+        <h3>🧩 활동 1: 저작권 침해 분류 <button class="explanation-btn" onclick="openPopup('activity1ExplanationPopup')">?</button></h3>
+        <div class="drag-drop-area">
+          <div class="items-to-drag" id="drag-source">
+            <div class="drag-item" draggable="true">친구의 그림을 허락 없이 사용</div>
+            <div class="drag-item" draggable="true">직접 찍은 사진 사용</div>
+            <div class="drag-item" draggable="true">웹에서 음악 다운받아 사용</div>
+            <div class="drag-item" draggable="true">온라인 기사 내용 복사 후 출처 없이 사용</div>
+            <div class="drag-item" draggable="true">친구에게 받은 유료 폰트 공유</div>
+          </div>
+          <div class="drop-targets">
+            <div class="drop-box" id="infringement">🚫 저작권 침해</div>
+            <div class="drop-box" id="fair-use">✅ 합법적 사용</div>
+          </div>
+        </div>
+
+        <div class="activity1-controls" style="margin-top: 1em; text-align: center;">
+          <button class="submit-btn" onclick="checkActivity1()">정답 확인</button>
+          <button class="submit-btn" onclick="resetActivity1()">다시하기</button>
+        </div>
+
+      </section>
+
+      <!-- 활동 2: 올바른 출처 표시 연습 -->
+      <section class="activity-section card">
+        <h3>✍️ 활동 2: 올바른 출처 표시 연습</h3>
+        <p>다음 상황을 보고 올바른 출처 표시를 완성해 봅시다.</p>
+        
+        <div class="citation-practice">
+          <h4>상황:</h4>
+          <p>'무료 이미지 사이트'에서 '바다 풍경' 이미지를 다운받아 사용하려고 합니다. 이 이미지의 정보는 다음과 같습니다.</p>
+          <ul>
+            <li>저작자: 김민준</li>
+            <li>제목: 여름 바다</li>
+            <li>출처: 무료 이미지 사이트 (www.freeimage.com)</li>
+            <li>라이선스: CC BY (저작자 표시)</li>
+          </ul>
+
+          <h4>올바른 출처 표시는?</h4>
+          <div class="citation-input-area">
+            <!-- 사용자가 출처를 작성할 수 있는 필드 -->
+            <textarea id="citation-output" placeholder="여기에 올바른 출처 표시를 작성하세요." style="width:100%; min-height: 80px; margin-bottom: 1em;"></textarea>
+            <!-- 또는 드래그 앤 드롭/빈칸 채우기 형태로 변경 가능 -->
+          </div>
+          <div class="citation-feedback"></div>
+        </div>
+
+        <div class="activity2-controls" style="margin-top: 1em; text-align: center;">
+          <button class="submit-btn" onclick="checkActivity2()">정답 확인</button>
+          <button class="submit-btn" onclick="resetActivity2()">다시하기</button>
+        </div>
+      </section>
+
+    </div>
+    <!-- 활동 섹션들을 묶는 컨테이너 끝 -->
+
+    <section class="self-eval-section card">
+      <h3>🌟 자기평가</h3>
+      <p>오늘 배운 내용을 바탕으로 스스로 평가해 봅시다.</p>
+      
+      <div class="eval-item">
+        <span>1. 저작권의 중요성에 대해 잘 이해했나요?</span>
+        <div class="star-rating" id="self-star-1">
+          <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+        </div>
+      </div>
+
+      <div class="eval-item">
+        <span>2. 저작권 침해 사례를 구분할 수 있나요?</span>
+         <div class="star-rating" id="self-star-2">
+          <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+        </div>
+      </div>
+
+       <div class="eval-item">
+        <span>3. 올바른 출처 표시 방법을 알고 적용할 수 있나요?</span>
+         <div class="star-rating" id="self-star-3">
+          <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+        </div>
+      </div>
+
+       <div class="eval-item">
+        <span>4. CCL의 의미와 종류를 설명할 수 있나요?</span>
+         <div class="star-rating" id="self-star-4">
+          <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+        </div>
+      </div>
+
+      <div class="eval-item">
+        <span>5. 이번 학습 내용을 통해 느낀 점이나 더 배우고 싶은 점을 자유롭게 써봅시다.</span>
+        <textarea id="self-subjective" placeholder="여기에 작성하세요." style="width:100%;margin-top:0.5em;min-height:60px;"></textarea>
+        <button class="submit-btn self-save-btn" onclick="saveSelfSubjective()">저장하기</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- '해보기'와 '평가 문제' 버튼 그룹 레이아웃 수정 -->
+  <div style="margin-bottom:1em; display: flex; justify-content: center; gap: 1em;">
+    <button class="popup-btn" onclick="openPopup('tryPopup')">✏️ 함께 생각 해보기</button>
+    <button class="popup-btn" onclick="openPopup('quizPopup')">📝 평가 문제 click!!</button>
+  </div>
+
+  <div class="navigation">
+ 	 <a href="page3.xhtml" class="next-btn"> ◀ 이전  </a>
+    <span>4 / 5</span>
+    <a href="page5.xhtml" class="next-btn">다음 ▶</a>
+  </div>
+
+  <!-- 해보기 팝업 -->
+  <div class="popup" id="tryPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('tryPopup')">×</span>
+      <h3>해보기: 저작권 침해 사례 판단하기</h3>
+      <p>다음 상황은 저작권 침해일까요? 왜 그렇게 생각하는지 이유를 써보세요.</p>
+      <img src="../Images/copyright_case_example.png" alt="저작권 침해 상황 예시" style="width:100%;max-width:750px;display:block;margin:1em auto;"/>
+      <textarea placeholder="이 상황이 저작권 침해인지, 그 이유는 무엇인지 써보세요." style="width:100%;margin-top:1em;min-height:80px;"></textarea>
+      <button class="submit-btn" onclick="alert('작성한 내용이 저장되었습니다!')">저장</button>
+    </div>
+  </div>
+
+  <!-- 활동 1 설명 팝업 -->
+  <div class="popup" id="activity1ExplanationPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('activity1ExplanationPopup')">×</span>
+      <h3>활동 1 설명: 저작권 침해 분류</h3>
+      <p>제시된 항목들을 '저작권 침해'와 '합법적 사용' 두 가지로 분류하여 드래그 앤 드롭해보세요.</p>
+      <p>각 항목이 왜 해당 범주에 속하는지 생각해보고 활동을 완료한 후 '정답 확인' 버튼을 눌러보세요.</p>
+      <!-- 필요하다면 추가 설명이나 이미지를 여기에 넣을 수 있습니다 -->
+    </div>
+  </div>
+
+  <!-- 평가 팝업 (해설 표시 방식 변경 및 힌트 팝업 구조 추가) -->
+  <div class="popup" id="quizPopup">
+    <div class="popup-content" style="max-width:600px;">
+      <span class="close" onclick="closePopup('quizPopup')">×</span>
+      <h3>평가 문제</h3>
+
+      <!-- OX 퀴즈 섹션 -->
+      <section class="quiz-section-popup card">
+        <h4>OX 퀴즈</h4>
+        <div class="quiz-card">
+          <!-- 이미지 대신 아이콘 사용 -->
+          <p>❌⭕️</p>
+          <p>1. 학교 점심시간에 인기 가수의 노래를 방송하는 것은 저작권 침해일까?</p>
+          <button onclick="showAnswer(this, true)">O</button>
+          <button onclick="showAnswer(this, false)">X</button>
+          <div class="feedback"></div>
+          <button class="hint-btn" onclick="openHintPopup(this, 'hint-ox1')">💡 힌트 보기</button>
+          <div class="explain-box" style="display: none;"><strong>해설:</strong> 학교에서 영리 목적이 아니면 저작권자의 허락 없이 가능.</div>
+           <!-- 힌트 팝업 내용 -->
+           <div class="hint-content" id="hint-ox1" style="display:none;">힌트 내용: 저작권은 영리 목적으로 이용할 때 더 엄격하게 적용돼요. 학교는 영리 목적일까요?</div>
+        </div>
+         <div class="quiz-card">
+          <!-- 이미지 대신 아이콘 사용 -->
+           <p>❌⭕️</p>
+          <p>2. 내가 직접 찍은 사진은 자유롭게 사용할 수 있다.</p>
+          <button onclick="showAnswer(this, true)">O</button>
+          <button onclick="showAnswer(this, false)">X</button>
+          <div class="feedback"></div>
+          <button class="hint-btn" onclick="openHintPopup(this, 'hint-ox2')">💡 힌트 보기</button>
+          <div class="explain-box" style="display: none;"><strong>해설:</strong> 본인이 저작권자이므로 자유롭게 사용 가능.</div>
+          <!-- 힌트 팝업 내용 -->
+           <div class="hint-content" id="hint-ox2" style="display:none;">힌트 내용: 저작권은 창작과 동시에 발생해요. 내가 찍은 사진의 창작자는 누구일까요?</div>
+        </div>
+      </section>
+
+      <!-- 객관식 문제 섹션 -->
+      <section class="multiple-choice-popup card">
+        <h4>객관식 문제</h4>
+         <div class="quiz-card">
+          <!-- 이미지 대신 아이콘 사용 -->
+           <p>✅1️⃣2️⃣3️⃣</p>
+          <p>1. 다음 중 올바른 출처 표시는?</p>
+          <label><input type="radio" name="mcq_popup1" value="1"/> 홍길동, 숲속 여행</label><br/>
+          <label><input type="radio" name="mcq_popup1" value="2"/> 숲속 여행 by 홍길동, CC BY-NC 4.0</label><br/>
+          <label><input type="radio" name="mcq_popup1" value="3"/> www.image.com</label><br/>
+          <button type="button" onclick="checkMCQ('mcq_popup1', 2, this)">정답 확인</button>
+          <div class="feedback"></div>
+          <button class="hint-btn" onclick="openHintPopup(this, 'hint-mcq1')">💡 힌트 보기</button>
+          <div class="explain-box" style="display: none;"><strong>해설:</strong> 저작자, 제목, 라이선스가 모두 포함되어야 함.</div>
+          <!-- 힌트 팝업 내용 -->
+           <div class="hint-content" id="hint-mcq1" style="display:none;">힌트 내용: 올바른 출처 표시는 저작자명, 저작물 제목, 이용 조건 등을 포함해야 해요.</div>
+        </div>
+      </section>
+
+       <!-- 빈칸 문제 섹션 -->
+      <section class="fill-blank-popup card">
+        <h4>빈칸 채우기 문제</h4>
+         <div class="quiz-card fill-blank">
+          <!-- 이미지 대신 아이콘 사용 -->
+           <p>✏️?</p>
+          <p>1. 저작권은 창작자가 자신의 <input type="text" class="blank-input" data-answer="저작물"/>에 대해 가지는 법적 권리입니다.</p>
+          <button onclick="checkFillBlank(this)">정답 확인</button>
+          <div class="feedback"></div>
+          <button class="hint-btn" onclick="openHintPopup(this, 'hint-blank1')">💡 힌트 보기</button>
+          <div class="explain-box" style="display: none;"><strong>해설:</strong> 저작물에 대한 권리임을 명확히 해야 함.</div>
+          <!-- 힌트 팝업 내용 -->
+           <div class="hint-content" id="hint-blank1" style="display:none;">힌트 내용: 저작권은 '무엇'에 대한 권리일까요? 창작의 대상은?</div>
+        </div>
+      </section>
+
+       <!-- 서술형 문제 섹션 -->
+      <section class="subjective-popup card">
+        <h4>서술형 문제</h4>
+         <div class="quiz-card">
+          <!-- 이미지 대신 아이콘 사용 -->
+           <p>✍️</p>
+          <p>1. 저작권을 지키지 않았을 때 생길 수 있는 문제를 한 가지 써보세요.</p>
+          <textarea id="subjectiveInputPopup" placeholder="예: 저작권 침해로 법적 처벌을 받을 수 있다." style="width:100%;margin-top:1em;min-height:80px;"></textarea>
+          <button onclick="checkSubjectivePopup()">제출</button>
+          <div class="feedback"></div>
+           <button class="hint-btn" onclick="openHintPopup(this, 'hint-essay1')">💡 힌트 보기</button>
+          <div class="explain-box" style="display: none;"><strong>해설:</strong> 법적 처벌, 사회적 신뢰 하락 등 다양한 문제가 발생할 수 있음.</div>
+           <!-- 힌트 팝업 내용 -->
+           <div class="hint-content" id="hint-essay1" style="display:none;">힌트 내용: 법적인 문제나 다른 사람과의 관계는 어떻게 될까요?</div>
+        </div>
+      </section>
+
+      <!-- 드래그 순서 맞추기 섹션 -->
+      <section class="drag-order-popup card">
+        <h4>드래그 순서 맞추기</h4>
+         <div class="quiz-card">
+            <!-- 이미지 대신 아이콘 사용 -->
+            <p>➡️➡️➡️</p>
+            <p>저작물 이용 절차를 올바른 순서로 배열하세요.</p>
+            <ul id="sortable-list-popup" class="sortable-list">
+              <li draggable="true">저작물 이용</li>
+              <li draggable="true">출처 표시</li>
+              <li draggable="true">이용 허락 받기</li>
+              <li draggable="true">저작권 확인</li>
+            </ul>
+            <button class="btn" onclick="checkOrderPopup()">정답 확인</button>
+            <div id="order-feedback-popup" class="feedback"></div>
+             <button class="hint-btn" onclick="openHintPopup(this, 'hint-drag')">💡 힌트 보기</button>
+            <div class="explain-box" style="display: none;"><strong>정답 순서:</strong> 저작권 확인 → 이용 허락 받기 → 출처 표시 → 저작물 이용</div>
+            <!-- 힌트 팝업 내용 -->
+           <div class="hint-content" id="hint-drag" style="display:none;">힌트 내용: 다른 사람의 물건을 사용하기 전에 무엇부터 해야 할까요? 사용 중에는요?</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- 힌트 팝업 오버레이 구조 -->
+  <div class="popup hint-popup" id="globalHintPopup">
+      <div class="popup-content hint-popup-content">
+          <span class="close" onclick="closeHintPopup()">×</span>
+          <h4>힌트</h4>
+          <div id="hint-popup-text"></div>
+      </div>
+  </div>
+
+  <button class="glossary-btn" onclick="openGlossary()">📚 용어사전</button>
+  <div class="glossary-popup" id="glossaryPopup">
+    <div class="glossary-content">
+      <span class="close" onclick="closeGlossary()">×</span>
+      <h3>용어사전</h3>
+      <div class="glossary-items">
+        <div class="glossary-item">
+          <h4>저작권</h4>
+          <p>창작자가 자신의 저작물에 대해 가지는 법적 권리</p>
+        </div>
+        <div class="glossary-item">
+          <h4>CCL</h4>
+          <p>Creative Commons License의 약자로, 저작물의 자유로운 공유를 위한 라이선스</p>
+        </div>
+        <div class="glossary-item">
+          <h4>출처</h4>
+          <p>저작물의 원작자와 원본을 밝히는 것</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="../Misc/script4.js"></script>
+</body>
+</html>

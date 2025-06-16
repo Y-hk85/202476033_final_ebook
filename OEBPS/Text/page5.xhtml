@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<!--?xml version="1.0" encoding="utf-8"?--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+  <title>나의 저작권 이야기</title>
+  <link rel="stylesheet" href="../Styles/style5.css" type="text/css"/>
+  <script src="../Misc/script5.js"></script>
+</head>
+<body>
+<nav class="page-navigation">
+    <a href="toc.xhtml" class="nav-btn home-btn">🏠 홈</a>
+  </nav>
+  <div class="unit-meta">
+    <span class="unit-right-label">1. 디지털 사회와 정보 윤리</span>
+  </div>
+
+  <div class="unit-header">
+    <p class="unit-title">📘 나의 저작권 이야기</p>
+    <p class="unit-desc">지금까지 배운 내용을 바탕으로, 저작권을 존중하고 지키는 나만의 실천을 정리해보아요!</p>
+  </div>
+
+  <section class="section-box">
+    <h2>✏️ 나의 다짐 쓰기</h2>
+    <p>앞으로 내가 만들거나 사용하는 창작물에 대해 어떤 자세로 임할 것인가요?</p>
+    <textarea id="myPledgeTextarea" placeholder="예) 나는 이미지나 음악을 사용할 때 반드시 출처를 밝히겠다."></textarea>
+    <button class="save-pledge-btn" onclick="savePledge()">저장하기</button>
+  </section>
+
+  <section class="section-box">
+    <h2>🎨 나만의 저작권 포스터 만들기</h2>
+    <div class="poster-creation-container">
+      <div class="poster-image-section">
+        <label>포스터 예시:</label><br/>
+        <div id="tipImage">
+          <img src="../Images/poster_sample.png" alt="포스터 예시" width="100%"/>
+        </div>
+        <button onclick="showPosterPopup('../Images/poster_sample.png')">확대해서 보기</button>
+      </div>
+      <div class="poster-input-section">
+        <label>포스터 제목:</label><br/>
+        <input type="text" placeholder="예) 저작권을 지켜요!"/><br/>
+        <label>포스터 메시지:</label><br/>
+        <input type="text" placeholder="예) 정당한 출처를 밝히고 콘텐츠를 사용해요."/><br/>
+        <button class="submit-poster-btn" onclick="submitPosterFile()">나만의 포스터 파일 올리기</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2>📝 수행평가 체크리스트</h2>
+    <ul>
+      <li><input type="checkbox" id="chk1"/> 다른 사람의 저작물을 출처 없이 사용한 적이 없는가?</li>
+      <li><input type="checkbox" id="chk2"/> 내가 만든 콘텐츠에 출처를 올바르게 표시했는가?</li>
+      <li><input type="checkbox" id="chk3"/> 창작물 공유 시 저작권 조건을 표시할 수 있는가?</li>
+    </ul>
+  </section>
+
+  <section class="section-box">
+    <h2>🎬 저작권 캠페인 영상 기획</h2>
+    <div class="campaign-plan">
+      <div class="campaign-input">
+        <label>캠페인 주제:</label>
+        <input type="text" placeholder="예) 올바른 출처 표시의 중요성"/>
+        <label>타겟 시청자:</label>
+        <input type="text" placeholder="예) 중학생 친구들"/>
+        <label>핵심 메시지:</label>
+        <textarea placeholder="예) 출처를 밝히는 것은 창작자를 존중하는 첫걸음입니다."></textarea>
+      </div>
+      <div class="storyboard">
+        <h3>스토리보드 작성</h3>
+        <div class="storyboard-frames">
+          <div class="frame">
+            <div class="frame-number">1</div>
+            <textarea placeholder="첫 장면 설명"></textarea>
+          </div>
+          <div class="frame">
+            <div class="frame-number">2</div>
+            <textarea placeholder="두 번째 장면 설명"></textarea>
+          </div>
+          <div class="frame">
+            <div class="frame-number">3</div>
+            <textarea placeholder="마지막 장면 설명"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="save-campaign-btn" onclick="saveCampaignPlan()">저장하기</button>
+  </section>
+
+  <section class="section-box">
+    <h2>🎮 CCL 라이선스 카드 게임</h2>
+    <div class="license-game">
+      <div class="game-instructions">
+        <p>다음 라이선스 카드들을 올바른 사용 사례와 매칭해보세요!</p>
+        <p>게임을 시작하려면 아래 버튼을 누르세요.</p>
+        <button class="game-start-btn" onclick="startLicenseGame()">게임 시작</button>
+      </div>
+      <div class="game-board" id="licenseGameBoard">
+        <!-- 게임 보드는 JavaScript로 동적 생성됩니다 -->
+        <div class="license-cards-container"></div>
+        <div class="usecase-cards-container"></div>
+      </div>
+      <div class="game-score">
+        <span>점수: </span>
+        <span id="gameScore">0</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2 class="section-title-with-help">🎨 디지털 콘텐츠 창작 체험 <span class="help-icon" data-help="디지털 도구를 활용하여 이미지, 텍스트, 도형 등을 조합해 자신만의 디지털 콘텐츠를 만들어보는 활동입니다. CCL 라이선스와 출처 표시에 대해 학습한 내용을 적용해 보세요." onclick="showHelpPopup(event)">?</span></h2>
+    <div class="content-creation">
+      <div class="left-column">
+        <div class="image-editor">
+          <div class="editor-tools">
+            <button class="tool-btn" onclick="addText()">텍스트 추가</button>
+            <input type="file" id="imageUpload" accept="image/*" onchange="uploadImage(this.files[0])" style="display: none;"/>
+            <button class="tool-btn" onclick="document.getElementById('imageUpload').click()">이미지 업로드</button>
+            <button class="tool-btn" onclick="clearCanvas()">초기화</button>
+          </div>
+          <canvas id="drawingCanvas" width="800" height="600"></canvas>
+        </div>
+        
+        <div class="license-section">
+          <h3>라이선스 정보</h3>
+          <select id="licenseSelect" onchange="updateLicense()">
+            <option value="CC BY">CC BY (저작자 표시)</option>
+            <option value="CC BY-SA">CC BY-SA (저작자 표시-동일조건변경허락)</option>
+            <option value="CC BY-NC">CC BY-NC (저작자 표시-비영리)</option>
+            <option value="CC BY-NC-SA" selected="selected">CC BY-NC-SA (저작자 표시-비영리-동일조건변경허락)</option>
+            <option value="CC BY-ND">CC BY-ND (저작자 표시-변경금지)</option>
+            <option value="CC BY-NC-ND">CC BY-NC-ND (저작자 표시-비영리-변경금지)</option>
+          </select>
+          <div id="licenseInfo" class="license-info">
+            <p>CC BY-NC-SA 4.0</p>
+            <p>이 저작물은 크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스에 따라 이용할 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="preview-section">
+          <h3>미리보기</h3>
+          <div class="preview-container">
+            <canvas id="previewCanvas" width="400" height="300"></canvas>
+          </div>
+        </div>
+        
+        <div class="source-info-section">
+          <h3>출처 정보</h3>
+          <div class="form-group">
+            <label for="workTitle">작품 제목</label>
+            <input type="text" id="workTitle" placeholder="작품 제목을 입력하세요"/>
+          </div>
+          <div class="form-group">
+            <label for="creatorName">제작자</label>
+            <input type="text" id="creatorName" placeholder="제작자 이름을 입력하세요"/>
+          </div>
+          <div class="form-group">
+            <label for="referenceSource">참고 자료 출처</label>
+            <input type="text" id="referenceSource" placeholder="참고한 자료의 출처를 입력하세요"/>
+          </div>
+          <div class="form-group">
+            <label for="creationDate">제작 날짜</label>
+            <input type="date" id="creationDate"/>
+          </div>
+        </div>
+        
+        <div class="action-buttons">
+          <button class="action-btn" onclick="updatePreview()">미리보기 업데이트</button>
+          <button class="action-btn" onclick="saveWork()">작품 저장하기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2>📝 정리하기 </h2>
+        <h3> 🔒 저작권 보호!! </h3>
+    <ul>
+      <li> <span>저작권</span> 저작물을 만든 사람이 가지는 권리</li>
+      <li><span>사용 권한에 따른 소프트웨어의 종류</span> 상용 소프트웨어, 셰어웨어, 프리웨어, 공개 소프트웨어</li>
+      <li><span>저작물 이용 허락 표시(CCL)의 목적</span> 저작물의 자유로운 이용 장려, 저작권자의 권리 보호</li>
+    </ul>
+  </section>
+
+  <div class="page-footer">
+	 <a href="page4.xhtml" class="next-btn"> ◀ 이전 </a>
+    <span class="page-number">  5 / 5</span>	 
+  </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package version="3.0" unique-identifier="BookId" xmlns="http://www.idpf.org/2007/opf">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:identifier id="BookId">urn:uuid:3a79a0aa-93ac-4fb1-95e4-b2ea6cec552f</dc:identifier>
+    <dc:language>ko</dc:language>
+    <dc:title>[메인 제목을 넣으세요]</dc:title>
+    <meta property="dcterms:modified">2025-06-16T21:42:48Z</meta>
+    <meta name="Sigil version" content="2.4.2"/>
+  </metadata>
+  <manifest>
+    <item id="Section0001.xhtml" href="Text/page1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="sgc-nav.css" href="Styles/sgc-nav.css" media-type="text/css"/>
+    <item id="nav.xhtml" href="Text/nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="xee8ca9d1-50a1-4a05-a992-e47c60ca29c3" href="Text/page2.xhtml" media-type="application/xhtml+xml"/>
+    <item id="Section0002.xhtml" href="Text/page3.xhtml" media-type="application/xhtml+xml"/>
+    <item id="Section0003.xhtml" href="Text/page4.xhtml" media-type="application/xhtml+xml"/>
+    <item id="Section0004.xhtml" href="Text/page5.xhtml" media-type="application/xhtml+xml"/>
+    <item id="Style0001.css" href="Styles/style1.css" media-type="text/css"/>
+    <item id="Style0002.css" href="Styles/style3.css" media-type="text/css"/>
+    <item id="Style0003.css" href="Styles/style2.css" media-type="text/css"/>
+    <item id="Style0004.css" href="Styles/style4.css" media-type="text/css"/>
+    <item id="Style0005.css" href="Styles/style5.css" media-type="text/css"/>
+    <item id="Script0001.js" href="Misc/script1.js" media-type="application/javascript"/>
+    <item id="Script0002.js" href="Misc/script2.js" media-type="application/javascript"/>
+    <item id="Script0003.js" href="Misc/script3.js" media-type="application/javascript"/>
+    <item id="Script0004.js" href="Misc/script4.js" media-type="application/javascript"/>
+    <item id="Script0005.js" href="Misc/script5.js" media-type="application/javascript"/>
+    <item id="ccl.jpg" href="Images/ccl.jpg" media-type="image/jpeg"/>
+    <item id="ccl_sseomneil.png" href="Images/youtube_thumbnail.png" media-type="image/png"/>
+    <item id="ccl_hagsaeng.png" href="Images/icon_Student.png" media-type="image/png"/>
+    <item id="copyright_case_example.png" href="Images/copyright_case_example.png" media-type="image/png"/>
+    <item id="copyright_case_example2.png" href="Images/copyright_case_example2.png" media-type="image/png"/>
+    <item id="example.png" href="Images/example.png" media-type="image/png"/>
+    <item id="icon_BY.png" href="Images/icon_BY.png" media-type="image/png"/>
+    <item id="icon_CC.png" href="Images/icon_CC.png" media-type="image/png"/>
+    <item id="icon_NC.png" href="Images/icon_NC.png" media-type="image/png"/>
+    <item id="icon_ND.png" href="Images/icon_ND.png" media-type="image/png"/>
+    <item id="icon_SA.png" href="Images/icon_SA.png" media-type="image/png"/>
+    <item id="poster_sample.png" href="Images/poster_sample.png" media-type="image/png"/>
+    <item id="quiz_overlay_fixed.png" href="Images/quiz_overlay_fixed.png" media-type="image/png"/>
+    <item id="source_example_fixed.png" href="Images/source_example_fixed.png" media-type="image/png"/>
+    <item id="geobugi_chulcheo.jpg" href="Images/source_example.jpg" media-type="image/jpeg"/>
+    <item id="goyangi.jpg" href="Images/photo_example.jpg" media-type="image/jpeg"/>
+    <item id="damyo_goyangi.jpg" href="Images/source_example_cat.jpg" media-type="image/jpeg"/>
+    <item id="jeojaggwon_doib.png" href="Images/thinking_start.png" media-type="image/png"/>
+    <item id="jeojaggwonchimhae.png" href="Images/저작권침해.png" media-type="image/png"/>
+    <item id="intro_video_cut.mp4" href="Video/intro_video_cut.mp4" media-type="video/mp4"/>
+    <item id="copyright_explanation.MP3" href="Audio/copyright_explanation.MP3" media-type="audio/mpeg"/>
+    <item id="x7b00aa0a-8954-4447-a89c-e138f13f284b" href="Text/toc.xhtml" media-type="application/xhtml+xml"/>
+    <item id="xe135da4f-fd54-4576-a535-dccbe0987251" href="Styles/style_toc.css" media-type="text/css"/>
+    <item id="x1df3e5a2-986f-47ae-b201-6494bca0670b" href="Misc/script_toc.js" media-type="application/javascript"/>
+  </manifest>
+  <spine>
+    <itemref idref="Section0001.xhtml"/>
+    <itemref idref="xee8ca9d1-50a1-4a05-a992-e47c60ca29c3"/>
+    <itemref idref="Section0002.xhtml"/>
+    <itemref idref="Section0003.xhtml"/>
+    <itemref idref="Section0004.xhtml"/>
+    <itemref idref="nav.xhtml" linear="no"/>
+    <itemref idref="x7b00aa0a-8954-4447-a89c-e138f13f284b"/>
+  </spine>
+</package>

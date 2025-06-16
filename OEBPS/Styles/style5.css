@@ -1,0 +1,918 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f7faff;
+    margin: 0;
+    padding: 20px;
+  }
+  .unit-meta {
+    text-align: right;
+    color: #555;
+    font-size: 14px;
+  }
+  .unit-header {
+    background-color: #0266b5;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+	 margin-top: 20px;
+  }
+  .unit-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .unit-desc {
+    margin-top: 5px;
+  }
+  .section-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-left: 5px solid #3399ff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Float 해제 */
+  }
+  .section-box h2 {
+    margin-top: 0;
+    display: flex; /* h2 자체를 flex container로 만들어 내부 요소 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 1em; /* h2 내부 요소 간 간격 */
+  }
+  textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 1em; /* 저장 버튼과의 간격 */
+  }
+  input[type="text"] {
+    width: 100%;
+    margin: 5px 0 10px;
+  }
+  .page-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  
+  /* 캠페인 영상 기획 섹션 */
+  .campaign-plan {
+    background: #f8f9fa;
+    padding: 1.5em;
+    border-radius: 8px;
+  }
+  
+  /* 나만의 저작권 포스터 만들기 섹션 */
+  .poster-creation-container {
+    display: flex; /* 자식 요소들을 가로로 배치 */
+    gap: 2em; /* 좌우 간격 설정 */
+    align-items: flex-start; /* 요소들을 상단에 정렬 */
+    flex-wrap: wrap; /* 화면이 좁아지면 요소들이 세로로 쌓이도록 설정 */
+  }
+  
+  .poster-image-section {
+    flex: 1; /* 사용 가능한 공간을 채우도록 설정 */
+    min-width: 250px; /* 최소 너비 설정 */
+    text-align: center; /* 이미지 및 버튼 가운데 정렬 */
+  }
+  
+  .poster-image-section img {
+    max-width: 250px; /* 이미지 최대 너비를 작게 설정 */
+    height: auto;
+    border: 1px solid #ddd; /* 이미지 테두리 */
+    border-radius: 8px; /* 이미지 모서리 둥글게 */
+    margin-bottom: 1em; /* 이미지 아래 여백 */
+    display: block; /* 이미지를 블록 요소로 만들어 margin auto로 가운데 정렬 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .poster-image-section button {
+    background-color: #42a5f5; /* 파란색 배경 */
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .poster-image-section button:hover {
+    background-color: #2196f3; /* 호버 시 진한 파란색 */
+  }
+  
+  .poster-input-section {
+    flex: 1; /* 사용 가능한 공간을 채우도록 설정 */
+    min-width: 250px; /* 최소 너비 설정 */
+  }
+
+  .poster-input-section label {
+    display: block;
+    margin: 1em 0 0.5em;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .poster-input-section input[type="text"] {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+  }
+  
+  /* 포스터 파일 제출 버튼 스타일 */
+  .submit-poster-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8em 1.5em; /* 패딩 줄이기 */
+    font-size: 0.9em; /* 폰트 크기 줄이기 */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .submit-poster-btn::before {
+    content: '\1F4E5';
+    margin-right: 0.5em;
+    font-size: 1em; /* 아이콘 크기도 줄이기 */
+    vertical-align: middle;
+  }
+
+  .submit-poster-btn:hover {
+    background: linear-gradient(135deg, #66bb6a, #4caf50);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .submit-poster-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* CCL 라이선스 게임 섹션 */
+  .license-game {
+    background: linear-gradient(135deg, #e1bee7, #ede7f6); /* 차분한 파스텔 보라색 그라디언트 */
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+  }
+  
+  .game-instructions {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+    color: #4527a0; /* 진한 보라색 텍스트 */
+  }
+  
+  .game-start-btn {
+    background: linear-gradient(135deg, #7cb342, #558b2f); /* 초록색 그라디언트 유지 또는 조정 */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1.2em 2.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(85, 139, 47, 0.5); /* 그림자 더 강화 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1em;
+  }
+  
+  .game-start-btn:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 30px rgba(85, 139, 47, 0.6); /* 호버 시 그림자 더 강화 */
+    background: linear-gradient(135deg, #9ccc65, #7cb342); /* 호버 시 그라디언트 변경 */
+  }
+  
+  .game-board {
+    display: none; /* 게임 시작 전 숨김 */
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2em;
+    margin: 2em 0;
+    padding: 1.5em;
+    background: #f3e5f5; /* 밝은 파스텔 보라색 배경 */
+    border-radius: 10px;
+    min-height: 300px;
+  }
+  
+  .license-cards-container,
+  .usecase-cards-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    border: 2px dashed #ba68c8; /* 파스텔 보라색 점선 테두리 */
+    border-radius: 8px;
+    background-color: #ffffff;
+    min-width: 250px;
+  }
+  
+  .license-cards-container {
+    border-color: #9575cd; /* 라이선스 컨테이너 테두리 색상 (중간 보라색 계열) */
+  }
+  
+  .usecase-cards-container {
+    border-color: #aed581; /* 사용 사례 컨테이너 테두리 색상 (연두색 계열 유지) */
+  }
+  
+  .game-score {
+    display: none; /* 게임 시작 전 숨김 */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4527a0; /* 진한 보라색 */
+    margin-top: 1.5em;
+  }
+  
+  /* 디지털 콘텐츠 창작 체험 섹션 */
+  .content-creation {
+    background: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex; /* 하위 구획(컬럼)들을 가로로 배치 */
+    gap: 20px; /* 컬럼 간 간격 */
+    flex-wrap: wrap; /* 화면이 좁아지면 세로로 쌓이도록 */
+  }
+  
+  .section-title-with-help {
+    margin-right: 2em;
+    display: flex; /* h2 자체를 flex container로 만들어 내부 요소 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 1em; /* h2 내부 요소 간 간격 */
+  }
+  
+  .help-icon {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-left: 0; /* 부모 gap으로 간격 조절 */
+    width: 24px;
+    height: 24px;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 24px; /* 아이콘 세로 중앙 정렬 */
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* 공간 부족 시 줄어들지 않도록 */
+  }
+
+  .help-icon:hover {
+    background-color: #f57c00;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+    transform: translateY(-2px); /* 호버 시 살짝 위로 */
+  }
+
+  /* 기존 도움말 카드 스타일 제거 */
+  .help-icon .help-card,
+  .help-icon:hover .help-card {
+      display: none; /* 완전히 숨김 */
+  }
+
+  /* 왼쪽 컬럼 스타일 */
+  .left-column {
+    flex: 1.5; /* 왼쪽 컬럼이 오른쪽보다 좀 더 넓게 차지 */
+    min-width: 350px; /* 최소 너비 */
+    display: flex;
+    flex-direction: column; /* 내부 요소 세로 배치 */
+    gap: 20px; /* 내부 섹션 간 간격 */
+  }
+  
+  /* 오른쪽 컬럼 스타일 */
+  .right-column {
+    flex: 1; /* 남은 공간 차지 */
+    min-width: 250px; /* 최소 너비 */
+    display: flex;
+    flex-direction: column; /* 내부 요소 세로 배치 */
+    gap: 20px; /* 내부 섹션 간 간격 */
+  }
+  
+  .image-editor {
+    /* flex: 1; */ /* left-column의 자식으로 변경되어 flex 조정 */
+    /* background-color: #e0f7fa; */
+    padding: 1em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #ddd; /* 테두리 추가 */
+  }
+
+  /* 라이선스 정보 섹션 (왼쪽 컬럼 아래에 배치) */
+  .license-section {
+    /* flex-basis: 100%; */ /* left-column 내에서 flex 조정 */
+    margin-top: 0; /* left-column의 gap으로 간격 조절 */
+    padding: 1em;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    border: 1px solid #a5d6a7; /* 테두리 추가 */
+  }
+  
+  .license-section h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: #2e7d32;
+  }
+
+  /* 미리보기 섹션 (오른쪽 컬럼에 배치) */
+  .preview-section {
+    /* flex: 1; */ /* right-column의 자식으로 변경되어 flex 조정 */
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .preview-section h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .preview-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* 출처 정보 섹션 (오른쪽 컬럼에 배치) */
+  .source-info-section {
+    /* flex: 1; */ /* right-column의 자식으로 변경되어 flex 조정 */
+    padding: 0.8em; /* 패딩을 1em에서 0.8em으로 줄임 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .source-info-section h3 {
+    margin-top: 0;
+    margin-bottom: 0.8em; /* h3 아래 마진도 줄임 */
+  }
+  
+  .source-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em; /* 입력 필드 그룹 간 간격 줄임 */
+  }
+  
+  .form-group {
+    /* margin-bottom: 1em; */
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 1em;
+  }
+  
+  .action-btn {
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: #2196f3;
+  }
+  
+  #drawingCanvas, #previewCanvas {
+    border: 1px solid #ccc;
+    display: block;
+  }
+  
+  #drawingCanvas {
+    width: 100%;
+    height: auto;
+  }
+  
+  #previewCanvas {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* 미디어 쿼리: 작은 화면에서 레이아웃 조정 */
+  @media (max-width: 768px) {
+    .content-creation {
+      flex-direction: column; /* 세로로 쌓이도록 변경 */
+    }
+    
+    .left-column,
+    .right-column {
+      flex-basis: auto; /* 기본값으로 되돌림 */
+      min-width: auto; /* 최소 너비 해제 */
+      width: 100%; /* 너비 전체 차지 */
+    }
+    
+    .image-editor {
+        width: 100%; /* 작은 화면에서 이미지 에디터 너비 전체 차지 */
+    }
+
+    .license-section {
+        width: 100%; /* 작은 화면에서 라이선스 섹션 너비 전체 차지 */
+    }
+
+    .preview-section,
+    .source-info-section {
+        width: 100%; /* 작은 화면에서 미리보기 및 출처 정보 너비 전체 차지 */
+    }
+  }
+  
+  /* 게임 카드 스타일 */
+  .game-card {
+    background: white;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em; /* 폰트 크기 조정 */
+  }
+  
+  .game-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.3em; /* 제목 폰트 크기 */
+  }
+  
+  .game-card p {
+    margin: 0;
+    font-size: 0.9em; /* 설명 폰트 크기 */
+    color: #555;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-card.license {
+    background: linear-gradient(135deg, #e1bee7, #ce93d8); /* 라이선스 카드 밝은 보라색 그라디언트 */
+    border: 2px solid #ab47bc; /* 중간 보라색 테두리 */
+    color: #4a148c; /* 진한 보라색 텍스트 */
+  }
+  
+  .game-card.useCase {
+    background: linear-gradient(135deg, #c8e6c9, #a5d6a7); /* 사용 사례 카드 밝은 초록색 그라디언트 유지 */
+    border: 2px solid #4caf50; /* 초록색 테두리 유지 */
+    color: #1b5e20; /* 진한 초록색 텍스트 유지 */
+  }
+  
+  .game-card.dragging {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  
+  /* 피드백 메시지 스타일 */
+  .feedback {
+    padding: 1em;
+    margin: 1em auto;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeInScale 0.5s ease;
+    max-width: 80%;
+  }
+  
+  .feedback.correct {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+  }
+  
+  .feedback.incorrect {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+  }
+  
+  @keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* 편집 가능한 요소 스타일 */
+  .editable-text {
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 1px dashed #2196f3;
+    border-radius: 4px;
+    min-width: 100px;
+    min-height: 30px;
+    cursor: text;
+  }
+  
+  .editable-image {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0.5em;
+    border: 1px dashed #2196f3;
+    border-radius: 4px;
+    cursor: move;
+  }
+  
+  .shape {
+    margin: 0.5em;
+    border-radius: 4px;
+    cursor: move;
+  }
+  
+  /* 드래그 앤 드롭 영역 스타일 */
+  .game-board {
+    min-height: 200px;
+    padding: 1em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 1em 0;
+  }
+  
+  /* 저장 옵션 버튼 스타일 개선 */
+  .save-options {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 1em;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+  }
+  
+  .save-options button {
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px; /* 최소 너비 설정 */
+  }
+  
+  .save-options button:hover {
+    transform: translateY(-2px) scale(1.05); /* 호버 시 살짝 확대 */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* 호버 시 그림자 */
+  }
+  
+  .save-btn {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .submit-btn {
+    background: #2196f3;
+    color: white;
+  }
+  
+  .share-btn {
+    background: #ff9800;
+    color: white;
+  }
+  
+  /* 나의 다짐 저장 버튼 스타일 */
+  .save-pledge-btn {
+    display: inline-block; /* 버튼을 인라인 블록으로 표시 */
+    float: right; /* 오른쪽 정렬 */
+    background: linear-gradient(135deg, #ab47cc, #8e24aa); /* 파스텔 보라색 계열 그라디언트 */
+    color: white; /* 텍스트 색상 */
+    border: none;
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 0.8em 1.5em; /* 패딩 */
+    font-size: 0.9em; /* 폰트 크기 (크게 하지 않음) */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    margin-top: 0.5em; /* textarea와의 간격 */
+    text-align: center;
+    text-decoration: none; /* 텍스트 밑줄 제거 */
+  }
+
+  .save-pledge-btn:hover {
+    background: linear-gradient(135deg, #ba68c8, #ab47cc); /* 호버 시 그라디언트 변경 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강화 */
+    transform: translateY(-1px); /* 호버 시 살짝 위로 */
+  }
+
+  .save-pledge-btn:active {
+    transform: translateY(0); /* 클릭 시 원래 위치로 */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* 클릭 시 그림자 약화 */
+  }
+  
+  /* 이미지 편집기 아래 라이선스 섹션 스타일 */
+  .license-section-below-image {
+    flex-basis: 100%; /* 부모(.content-creation) 너비 전체 차지 */
+    margin-top: 10px; /* 이미지 편집기와의 상단 간격 */
+    padding: 1em; /* 내부 여백 */
+    background-color: #e8f5e9; /* 연한 초록색 배경 */
+    border-radius: 8px;
+  }
+  
+  .license-section-below-image h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: #2e7d32; /* 진한 초록색 텍스트 */
+  }
+
+  /* 오른쪽 사이드바 스타일 (미리보기, 출처 정보, 액션 버튼) */
+  .editor-right-sidebar {
+    flex: 1; /* 남은 공간 차지 */
+    min-width: 250px; /* 최소 너비 */
+    display: flex;
+    flex-direction: column; /* 내부 요소 세로 배치 */
+    gap: 20px; /* 섹션 간 간격 */
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+  .preview-section {
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center; /* 미리보기 캔버스 중앙 정렬 */
+  }
+  
+  .preview-section h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .preview-container {
+    width: 100%;
+    max-width: 400px; /* 캔버스 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+  }
+  
+  #licenseSelect {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .license-info {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #f1f8e9; /* 더 연한 초록색 배경 */
+    border: 1px dashed #a5d6a7; /* 점선 테두리 */
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  .license-info p {
+    margin: 0 0 0.5em 0;
+    line-height: 1.4;
+  }
+  
+  .license-info p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .source-info-section {
+    padding: 0.8em; /* 패딩을 1em에서 0.8em으로 줄임 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .source-info-section h3 {
+    margin-top: 0;
+    margin-bottom: 0.8em; /* h3 아래 마진도 줄임 */
+  }
+  
+  .source-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em; /* 입력 필드 그룹 간 간격 줄임 */
+  }
+  
+  .form-group {
+    /* margin-bottom: 1em; */
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* 패딩 포함 */
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap; /* 버튼이 많아지면 줄바꿈 */
+    gap: 10px; /* 버튼 간 간격 */
+    justify-content: center; /* 버튼 중앙 정렬 */
+    margin-top: 1em;
+  }
+  
+  .action-btn {
+    background-color: #42a5f5; /* 파란색 배경 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: #2196f3;
+  }
+  
+  #drawingCanvas, #previewCanvas {
+    border: 1px solid #ccc;
+    display: block; /* 캔버스 하단 공백 제거 */
+  }
+  
+  #drawingCanvas {
+    width: 100%;
+    height: auto; /* 비율 유지 */
+  }
+  
+  #previewCanvas {
+    width: 100%;
+    height: auto; /* 비율 유지 */
+  }
+  
+  /* 미디어 쿼리: 작은 화면에서 레이아웃 조정 */
+  @media (max-width: 768px) {
+    .content-creation {
+      flex-direction: column; /* 세로로 쌓이도록 변경 */
+    }
+    
+    .image-editor,
+    .license-section-below-image,
+    .editor-right-sidebar {
+      flex-basis: auto; /* 기본값으로 되돌림 */
+      min-width: auto; /* 최소 너비 해제 */
+      width: 100%; /* 너비 전체 차지 */
+    }
+  }
+  
+  /* 저작권 캠페인 영상 기획 저장 버튼 */
+  .save-campaign-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+
+  .save-campaign-btn:hover {
+    background-color: #45a049;
+  }
+
+  /* 디지털 콘텐츠 창작 체험 도구 버튼 */
+  .tool-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .tool-btn:hover {
+    background-color: #1976D2;
+  }
+
+  .tool-btn:last-child {
+    margin-right: 0;
+  }
+  .next-btn {
+  display: inline-block;
+  background-color: #0066cc;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05em;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.next-btn:hover {
+  background-color: #004999;
+  transform: translateX(3px);
+}
+h3 {
+  color: #0266b5;
+  padding-left: 1em;
+}
+span {
+  font-weight: bold;
+  color: #0266b5;
+}
+
+.page-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+ /*background-color: #fff;*/
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e9ecef;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.home-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
+
+.page-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

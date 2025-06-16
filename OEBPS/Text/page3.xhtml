@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+  <title>출처 표시 실천</title>
+  <link href="../Styles/style3.css" rel="stylesheet" type="text/css"/>
+  <script src="../Misc/script3.js"></script>
+</head>
+<body>
+<nav class="page-navigation">
+    <a href="toc.xhtml" class="nav-btn home-btn">🏠 홈</a>
+  </nav>
+<div class="main-layout">
+  <div class="main-content">
+    <div class="unit-meta">
+      <span class="unit-right-label">1. 디지털 사회와 정보 윤리</span>
+    </div>
+    <div class="unit-header">
+      <p class="unit-title">출처 표시와 적용</p>
+    </div>
+    <div class="question-box">
+      <p><strong>올바른 출처 작성, 함께 연습해요!</strong></p>
+    </div>
+    <div class="learning-goals">
+      <h2>🌱 학습 목표</h2>
+      <ul>
+        <li>다양한 저작물의 출처를 정확하게 표시할 수 있다.</li>
+        <li>조건에 따른 출처 문장을 작성할 수 있다.</li>
+        <li>출처 작성 후 평가 체크리스트로 자기 성찰을 할 수 있다.</li>
+      </ul>
+    </div>
+    <div class="instruction-box">
+      <h3>📘 출처는 이렇게 써야 해요!</h3>
+      <p class="tip-box">
+        출처 작성에는 다음 요소들이 포함되어야 해요:<br/>
+        ✔ <strong>저작자 이름</strong><br/>
+        ✔ <strong>작품 제목</strong><br/>
+        ✔ <strong>라이선스 조건</strong><br/>
+        ✔ <strong>원본 링크</strong><br/>
+        <span class="example">예: 홍길동, 『숲속 야경』, CC BY-NC 4.0, https://original-link.com</span>
+      </p>
+    </div>
+    <div class="input-area">
+      <div class="practice-header">
+        <h3>📝 실습해 보기!</h3>
+        <button class="explain-btn" onclick="showPracticeExplain()">설명보기</button>
+      </div>
+      <div class="practice-explain-popup" id="practiceExplainPopup">
+        <div class="practice-explain-content">
+          <span class="close" onclick="closePracticeExplain()">×</span>
+          <img src="../Images/source_example_cat.jpg" alt="출처 작성 예시 이미지" class="practice-explain-img"/>
+          <div class="practice-explain-desc">
+            <p>예시 이미지는 여러분이 만든 창작물(혹은 직접 촬영한 사진) 이라고 가정해 봅시다. 이 작품을 공유하고 싶다면, 어떤 정보를 포함해 출처를 써야 할까요?<br/><br/>
+            직접 출처 문장을 입력해 보며, 올바른 출처 표시 방법을 연습해 보세요.</p>
+            <ul>
+              <li>저작자 이름 (예: 김서연)</li>
+              <li>작품 제목 (예: 『담요 속 고양이』)</li>
+              <li>라이선스 조건 (예: CC BY-NC 4.0)</li>
+              <li>원본 링크 또는 출처 URL (예: https://myblog.com/catphoto)</li>
+            </ul>
+            <p><strong>Tip:</strong> 모든 요소가 빠짐없이 들어가야 바른 출처랍니다!</p>
+          </div>
+        </div>
+      </div>
+      <div class="input-flex-row">
+        <div class="input-image-box">
+          <img src="../Images/source_example.jpg" alt="출처 작성용 예시 이미지"/>
+        </div>
+        <div class="input-panel">
+          <h3>✍ 직접 출처 문장을 입력해 보세요:</h3>
+          <textarea id="citationInput" placeholder="예: 홍길동, '숲속 야경', CC BY-NC-SA 4.0, https://..." rows="3"></textarea>
+          <button onclick="evaluateCitation()">입력 확인</button>
+          <div id="feedbackBox" class="feedback-box">출처 입력 결과가 여기에 표시됩니다.</div>
+        </div>
+      </div>
+    </div>
+    <div class="self-check">
+      <h3>🧠 스스로 평가해 보기</h3>
+      <div class="emoji-set">
+        <label>조건에 맞는 출처 문장을 썼나요?</label>
+        <div class="emoji-group">
+          <input type="radio" name="q1" onclick="selectEmojiRadio(this)"/><span>😐</span>
+          <input type="radio" name="q1" onclick="selectEmojiRadio(this)"/><span>😊</span>
+          <input type="radio" name="q1" onclick="selectEmojiRadio(this)"/><span>🤩</span>
+        </div>
+      </div>
+      <div class="emoji-set">
+        <label>다른 사람의 창작물을 존중했나요?</label>
+        <div class="emoji-group">
+          <input type="radio" name="q2" onclick="selectEmojiRadio(this)"/><span>😐</span>
+          <input type="radio" name="q2" onclick="selectEmojiRadio(this)"/><span>😊</span>
+          <input type="radio" name="q2" onclick="selectEmojiRadio(this)"/><span>🤩</span>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-section">
+      <h3>🔍 퀴즈 풀어보기</h3>
+      <button class="quiz-start-btn" onclick="showPopupQuiz()">퀴즈 시작</button>
+    </div>
+    <div class="popup-overlay" id="quizPopupOverlay"></div>
+    <div class="quiz-popup" id="quizPopup">
+      <h4>출처 표시 관련 퀴즈</h4>
+      <p>다음 중 출처에 포함되어야 할 항목이 아닌 것은?</p>
+      <div class="quiz-option" onclick="checkAnswer(0)">① 저작자 이름</div>
+      <div class="quiz-option" onclick="checkAnswer(1)">② 작품 제목</div>
+      <div class="quiz-option" onclick="checkAnswer(2)">③ 다운로드 수</div>
+      <div class="quiz-option" onclick="checkAnswer(3)">④ 라이선스 조건</div>
+      <div id="quizResultMsg" class="quiz-result-msg"></div>
+      <button onclick="closePopupQuiz()">닫기</button>
+    </div>
+    <div class="page-footer">
+	   <a href="page2.xhtml" class="next-button"> ◀ 이전  </a>
+      <span class="page-number"> 3 / 5</span>
+      <a href="page4.xhtml" class="next-button">다음 ▶</a>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="reference-box">
+      <h4>🔗 참고자료</h4>
+      <ul>
+        <li><a href="https://www.kcopa.or.kr/" target="_blank">한국저작권보호원</a></li>
+        <li><a href="https://www.copyright.or.kr/" target="_blank">한국저작권위원회</a></li>
+        <li><a href="https://www.edunet.net/" target="_blank">에듀넷(교육자료)</a></li>
+      </ul>
+    </div>
+    <div class="glossary-box">
+      <h4>📚 용어사전</h4>
+      <dl>
+        <dt>저작권</dt>
+        <dd>사람이 만든 창작물(글, 그림, 음악 등)에 대해 창작자가 가지는 권리로, 다른 사람이 허락 없이 사용할 수 없게 보호해 주는 제도입니다.</dd>
+        <dt>라이선스</dt>
+        <dd>저작물을 사용할 때 지켜야 하는 약속이나 조건을 말합니다. 예를 들어, 'CC BY-NC'는 저작자를 밝히고, 비영리로만 사용할 수 있다는 뜻입니다.</dd>
+        <dt>출처</dt>
+        <dd>정보나 자료, 그림 등이 어디에서 왔는지 밝히는 것을 말합니다. 출처를 정확히 써야 저작권을 지킬 수 있습니다.</dd>
+        <dt>원본 링크</dt>
+        <dd>저작물의 실제 위치(웹사이트 주소 등)를 알려주는 인터넷 주소입니다.</dd>
+      </dl>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

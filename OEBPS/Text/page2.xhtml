@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+<title>CCL 조건 실천 시뮬레이터</title>
+<link href="../Styles/style2.css" rel="stylesheet" type="text/css"/>
+<script src="../Misc/script2.js"></script>
+</head>
+<body>
+<nav class="page-navigation">
+    <a href="toc.xhtml" class="nav-btn home-btn">🏠 홈</a>
+  </nav>
+<div class="unit-meta">
+<span class="unit-right-label">1. 디지털 사회와 정보 윤리</span>
+</div>
+<div class="unit-header">
+<p class="unit-title">CCL과 저작권 실천</p>
+</div>
+<div class="goal-box top-goal">
+<ul>
+<li> 다양한 CCL 조건을 직접 선택하며 익힐 수 있다.</li>
+<li> 조건 조합이 의미하는 사용 범위를 이해할 수 있다.</li>
+<li> 나의 콘텐츠에 적절한 조건을 판단할 수 있다.</li>
+</ul>
+</div>
+<button id="openCclBtn" onclick="openCclOverlay()">CCL이란?  (클릭해서 확인!)</button>
+<div class="question-box">
+<p><strong>“내가 찍은 사진을 친구가 쓰고 싶대요. 어떤 조건을 붙여야 할까요?”</strong></p>
+</div>
+<div class="simulator-container">
+<div class="simulator-left">
+<div class="drop-area" id="dropTarget" ondragover="allowDrop(event)" ondrop="dropCondition(event)">
+<img alt="내가 찍은 사진" class="illustration" src="../Images/photo_example.jpg"/>
+<div class="overlay-text">이곳에 조건을 드래그해서 올려보세요</div>
+<div id="selected-conditions"></div>
+</div>
+</div>
+<div class="simulator-right">
+<p><strong>📌 조건을 아래에서 선택하거나 드래그하세요:</strong></p>
+<div class="ccl-option" draggable="true" onclick="toggleCondition('BY')" ondragstart="dragCondition(event, 'BY')"><img src="../Images/icon_BY.png" alt="BY" class="ccl-mark-icon"/>BY - 저작자 표시</div>
+<div class="ccl-option" draggable="true" onclick="toggleCondition('NC')" ondragstart="dragCondition(event, 'NC')"><img src="../Images/icon_NC.png" alt="NC" class="ccl-mark-icon"/>NC - 비영리</div>
+<div class="ccl-option" draggable="true" onclick="toggleCondition('ND')" ondragstart="dragCondition(event, 'ND')"><img src="../Images/icon_ND.png" alt="ND" class="ccl-mark-icon"/>ND - 변경 금지</div>
+<div class="ccl-option" draggable="true" onclick="toggleCondition('SA')" ondragstart="dragCondition(event, 'SA')"><img src="../Images/icon_SA.png" alt="SA" class="ccl-mark-icon"/>SA - 동일 조건 공유</div>
+<p class="sim-result-label">🔎 조건 조합 해석:</p>
+<div class="combo-box" id="combo-result">선택된 조건에 따른 의미가 여기에 표시됩니다.</div>
+</div>
+</div>
+<div class="video-section">
+<h3>🎬 CCL 소개 영상 보기</h3>
+<div class="video-thumbnail">
+<div class="video-thumbnail-box">
+<img alt="CCL 영상 썸네일" class="thumbnail-img" src="../Images/youtube_thumbnail.png"/> </div>
+<div class="play-button">
+<div class="video-link-wrapper">
+  <a href="https://youtu.be/uCY1JP2CbnA" target="_blank" class="video-link-btn">🎬 영상 보러가기</a>
+</div>
+</div>
+</div>
+</div>
+<div class="practice-box">
+<h3>🚀 실천해 보기</h3>
+<ul>
+<li>사진 아래에 나타난 조건 조합을 기억해보세요.</li>
+<li>내가 만든 영상/그림에도 어떤 조건을 붙일지 고민해 보세요.</li>
+</ul>
+</div>
+<div class="page-footer">
+ <a href="page1.xhtml" class="next-btn"> ◀ 이전 </a>
+<span class="page-number">2 / 5</span>
+<a href="page3.xhtml" class="next-btn"> 다음 ▶</a>
+</div>
+
+<div id="cclOverlay">
+<div class="ccl-overlay-content">
+<span class="close-btn" onclick="closeCclOverlay()">×</span>
+<h2>CCL이란 무엇인가요?</h2>
+<img alt="CCL 마크" src="../Images/icon_Student.png"/>
+<p>CCL(Creative Commons License)은 저작자가 자신의 창작물에 일정 조건을 명시하여
+    다른 사람들이 자유롭게 공유하고 사용할 수 있도록 하는 라이선스 체계입니다.</p>
+<p>BY, NC, ND, SA와 같은 조건을 조합하여 저작자가 허용하는 사용 범위를 표현할 수 있습니다.</p>
+</div>
+</div>
+</body>
+</html>

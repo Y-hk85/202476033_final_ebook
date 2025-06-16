@@ -1,0 +1,369 @@
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f4faff;
+  margin: 0;
+  padding: 30px;
+  line-height: 1.7em;
+}
+
+.unit-meta {
+  text-align: right;
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.unit-header {
+  background-color: #005bac;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+.unit-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.goal-box.top-goal {
+  background-color: #eaf3fd;
+  padding: 16px 20px;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 20px;
+}
+
+.goal-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.goal-box li::before {
+  content: "✓ ";
+  color: #0078d7;
+  font-weight: bold;
+}
+
+.question-box {
+  background-color: #d9ecff;
+  border-left: 6px solid #1976d2;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 1.05em;
+  margin-bottom: 20px;
+}
+
+.simulator-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.simulator-left, .simulator-right {
+  flex: 1 1 45%;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+}
+
+.drop-area {
+  position: relative;
+  padding: 10px;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  min-height: 350px;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #888;
+  font-size: 0.9em;
+}
+
+#selected-conditions {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #005bac;
+}
+
+.ccl-option {
+  background-color: #e3f2fd;
+  padding: 12px 18px;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+.ccl-option:hover {
+  background-color: #bbdefb;
+}
+
+.combo-box {
+  background-color: #ffffff;
+  border: 2px solid #1976d2;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 10px;
+  min-height: 60px;
+}
+
+.video-section {
+  background-color: #f0f4ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.video-buttons {
+  margin-top: 10px;
+}
+
+.video-buttons button {
+  padding: 10px 16px;
+  margin-right: 10px;
+  background-color: #005bac;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.video-buttons button:hover {
+  background-color: #004080;
+}
+
+.practice-box {
+  background-color: #e8f5e9;
+  border-left: 6px solid #43a047;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.page-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.page-number {
+  background-color: #e3eaf4;
+  padding: 6px 14px;
+  border-radius: 14px;
+}
+
+
+.ccl-icon {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  display: inline-block;
+}
+
+#selected-conditions img {
+  vertical-align: middle;
+}
+
+
+.ccl-mark-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.ccl-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#cclOverlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.ccl-overlay-content {
+  background-color: #fff;
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 14px;
+  position: relative;
+}
+
+.ccl-overlay-content h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.ccl-overlay-content img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 10px auto;
+}
+
+.ccl-overlay-content p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  color: #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+}
+
+#openCclBtn {
+  margin: 16px 0 12px 0;
+  padding: 20px 40px;
+  font-size: 17px;
+  background-color: darkred;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.video-thumbnail-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.thumbnail-img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+.video-link-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.video-link-btn {
+  display: inline-block;
+  background-color: #005bac;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.05em;
+  transition: background-color 0.3s ease;
+}
+
+.video-link-btn:hover {
+  background-color: #004080;
+}
+.video-frame-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.video-buttons button {
+  padding: 10px 16px;
+  margin: 10px 5px 0;
+  background-color: #005bac;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.video-buttons button:hover {
+  background-color: #004080;
+}
+.next-btn {
+  background: #007acc;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.page-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+ /*background-color: #fff;*/
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e9ecef;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.home-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
+
+.page-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
